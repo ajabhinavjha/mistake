@@ -1,26 +1,34 @@
-<section id="agents" class="agents section">
+<section
+	id="agents" class="agents section">
 
-      <!-- Section Title -->
-      <div class="container section-title " data-aos="fade-up">
-        {% include "@molecules/section/section.twig" with {
+	<!-- Section Title -->
+	<div class="container section-title " data-aos="fade-up">
+		{% include "@molecules/section/section.twig" with {
           sectionheading: ouragentcomptitle,
           sectionheadingstyle: ouragentcomptitlestyle,
           sectionparagraph: ouragentcompsubtitle
         } %}
-      </div><!-- End Section Title -->
+	</div>
+	<!-- End Section Title -->
 
-      <div class="container">
+	<div class="container">
 
-        <div class="row gy-5">
-          {% for item in ouragentitems %}  
-          <div class="col-lg-4 col-md-6 " data-aos="fade-up" data-aos-delay="100">
-            {% include "@molecules/ouragent/ouragent.twig" with {
-                    
+		<div class="row gy-5">
+			{% for item in ouragentitems %}
+				<div class="col-lg-4 col-md-6 " data-aos="fade-up" data-aos-delay="100">
+					{% include "@molecules/ouragent/ouragent.twig" with {
+                    ouragentimg: item.img,
+                    ouragentimgstyle: item.imgstyle,
+                    ouragentheading: item.heading,
+                    ouragentheadingstyle: item.headingstyle,
+                    ouragentspan: item.span,
+                    socialitems: item.socialitems
             } %}
-          </div><!-- End Team Member -->
-          {% endfor %}
-        </div>
+				</div>
+				<!-- End Team Member -->
+			{% endfor %}
+		</div>
 
-      </div>
+	</div>
 
-    </section>
+</section>
