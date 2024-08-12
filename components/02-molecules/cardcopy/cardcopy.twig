@@ -1,0 +1,14 @@
+<div class="service-item  position-relative">
+	{% include "@atoms/booticons/booticons.twig" with {
+    booticon: cardicon
+} %}
+	{% include "@atoms/heading3/heading3.twig" with {
+    heading3_url: cardurl,
+    heading3_url_content: cardheading,
+    modifier_class: cardheadingstyle
+} %}
+	{% include "@atoms/paragraph/paragraph.twig" with {
+    para_content: cardparagraph,
+    modifier_class: cardparagraphstyle
+} %}
+</div>

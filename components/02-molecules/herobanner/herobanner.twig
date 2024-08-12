@@ -1,0 +1,21 @@
+{% include "@atoms/image/image.twig" with {
+        image_src: hero_img,
+        modifier_class: hero_img_style
+    } %}
+<div class="carousel-container ">
+	<div>
+		{% include "@atoms/paragraph/paragraph.twig" with {
+        para_content: herotext_para,
+        modifier_class: herotext_para_style
+    } %}
+		{% include "@atoms/heading2/heading2.twig" with {
+        heading2_content: herotext_heading,
+        modifier_class: herotext_heading_style
+    } %}
+		{% include "@atoms/icons/icons.twig" with {
+        btn_url: herotext_button_url,
+        btn_content: herotext_button,
+        modifier_class: herotext_button_style
+    } %}
+	</div>
+</div>

@@ -1,0 +1,27 @@
+<div class="member">
+	<div class="pic">
+		{% include "@atoms/image/image.twig" with {
+        image_src: ouragentimg,
+        modifier_class: ouragentimgstyle,
+    } %}
+	</div>
+	<div class="member-info">
+		{% include "@atoms/heading4/heading4.twig" with {
+        heading4_content: ouragentheading,
+        modifier_class: ouragentheadingstyle,
+    } %}
+		{% include "@atoms/span/span.twig" with {
+        span_content: ouragentspan,
+    } %}
+
+		<div class="social">
+			{% for item in socialitems %}
+				{% include "@atoms/icons/icons.twig" with {
+                btn_url: item.url,
+                faicon: item.biclass,
+                fai: item.biclassstyle,
+            } %}
+			{% endfor %}
+		</div>
+	</div>
+</div>

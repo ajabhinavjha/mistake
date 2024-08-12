@@ -1,0 +1,36 @@
+ {% set bnrtitle = content.field_hero_component_title %}
+ {% set title_content = content.field_hero_component_subtitle %}
+ {% set img_banner_src = content.field_hero_component_img[0]["#markup"] %}
+ {% set banner_url = content.field_hero_component_main_btn[0]["#url"].uri %}
+ {% set banner_title = content.field_hero_component_main_btn[0]["#title"] %}
+
+ <div class="hero-container mt-5">
+          
+            {% include "@atoms/banerheading/banerheading.twig"  with {
+              banerheading: bnrtitle
+            }%}
+
+           
+
+            {% include "@atoms/title/title.twig" with {
+              heading: title_content
+            }%}
+
+            {% include "@atoms/img-copy/img-copy.twig"  with {
+              img_src: img_banner_src
+            }%} 
+    
+            {% include "@atoms/buttons-copy/button-copy.twig" with {
+              bt: banner_title,
+              url: banner_url
+            }%}
+  {# <div class="btns d-flex">
+            {% for item in menuu_items %}
+              {% include "@atoms/link-copy/link-copy.twig" with {
+                link_content: item.title,
+                link_url: item.url,
+                modifier_class: hero_btn
+              } %}
+            {% endfor %}
+  </div>             #}
+</div>

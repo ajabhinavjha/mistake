@@ -1,0 +1,16 @@
+.herotext_heading{
+    color: #2eca6a;
+
+}
+.carousel-container{
+    position: absolute;
+    top: 90px;
+    right: 100px;
+    bottom: 90px;
+    left: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 3;
+}

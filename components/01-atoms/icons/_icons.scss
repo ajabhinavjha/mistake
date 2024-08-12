@@ -1,0 +1,41 @@
+.fai{
+    color: #000000;
+    text-decoration: none;
+    transition: all 0.5s ease;
+    &:hover{
+        color: #2eca6a;
+        text-decoration: none;
+    }
+}
+.buttn--2{
+    color: color-mix(in srgb, #444444, transparent 20%);
+    font-size: 16px;
+    margin: 0 2px;
+}
+.buttn{
+    color: #000000;
+    text-decoration: none;
+    transition: all 0.5s ease;
+    &:hover{
+        color: #2eca6a;
+        text-decoration: none;
+    }
+}
+.buttn--1{
+    color: #ffffff;
+    font-family: "Raleway", sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    display: inline-block;
+    padding: 10px 40px;
+    border-radius: 50px;
+    transition: 0.5s;
+    margin: 10px 0;
+    border: 2px solid #2eca6a;
+    &:hover{
+        background: color-mix(in srgb, #2eca6a, transparent 20%);
+        color: #ffffff;
+    }
+}

@@ -11,6 +11,8 @@ dependencies:
 # Libraries (These are loaded on every page. Use https://www.drupal.org/developing/api/8/assets#twig whenever possible.)
 libraries:
   - 'emulsify/global'
+  - 'emulsify/bootstrap'
+  - 'emulsify/bootstrap_icons'
   # - 'emulsify/typekit'
 
 # Libraries override allows you to remove libraries added by other projects.

@@ -1,0 +1,33 @@
+
+hero_items:
+  - img: 'https://bootstrapmade.com/demo/templates/EstateAgency/assets/img/hero-carousel/hero-carousel-1.jpg'
+    imgstyle: 'image--1' 
+    content: 'Doral, Florida'
+    pstyle: 'paragraph--1'
+    heading: '<span class="herotext_heading">204</span>  Olive Road Two'
+    headingstyle: 'heading2--1'
+    url: 'https://bootstrapmade.com/demo/templates/EstateAgency/property-single.html'
+    link_content: 'rent | $ 3.000'
+    buttonstyle: 'buttn--1'
+  - img: 'https://bootstrapmade.com/demo/templates/EstateAgency/assets/img/hero-carousel/hero-carousel-2.jpg'
+    imgstyle: 'image--1'
+    content: 'Doral, Florida'
+    pstyle: 'paragraph--1'
+    heading: '<span class="herotext_heading">247</span>  Venda Road Five'
+    headingstyle: 'heading2--1'
+    url: 'https://bootstrapmade.com/demo/templates/EstateAgency/property-single.html'
+    link_content: 'sale | $ 356.000'
+    buttonstyle: 'buttn--1'
+  - img: 'https://bootstrapmade.com/demo/templates/EstateAgency/assets/img/hero-carousel/hero-carousel-3.jpg'
+    imgstyle: 'image--1'
+    content: 'Doral, Florida'
+    pstyle: 'paragraph--1'
+    heading: '<span class="herotext_heading">247</span>  Vitra Road three'
+    headingstyle: 'heading2--1'
+    url: 'https://bootstrapmade.com/demo/templates/EstateAgency/property-single.html'
+    link_content: 'rent | $ 3.000'
+    buttonstyle: 'buttn--1'
+    
+
+
+     
