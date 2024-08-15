@@ -1,0 +1,14 @@
+<div class="col-lg-3 " data-aos="fade-up" data-aos-delay="100">
+            <div class="portfolio-info">
+              {% include "@atoms/heading3/heading3.twig" with {
+                heading3_content: propertysummryh3,
+              } %}
+              <ul>
+                {% for item in propertysummryitems %}
+                    {% include "@atoms/list/list.twig" with {
+                        li_content: item.list,
+                    } %}
+                {% endfor %}
+              </ul>
+            </div>
+          </div>

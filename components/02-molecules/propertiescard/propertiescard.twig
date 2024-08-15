@@ -1,0 +1,36 @@
+<div class="col-xl-4 col-md-6 " data-aos="fade-up" data-aos-delay="100">
+	<div class="card">
+		{% include "@atoms/image/image.twig" with {
+      image_src: propertiescardimg,
+    } %}
+		<div class="card-body">
+			{% include "@atoms/span/span.twig" with {
+        span_content: propertiescardspan,
+        modifier_class: propertiescardspan_style
+      } %}
+			{% include "@atoms/heading3/heading3.twig" with {
+        heading3_url: propertiescardh3url,
+        heading3_url_content: propertiescardh3,
+		modifier__class: 'stretched-link',
+      } %}
+			<div class="card-content d-flex flex-column justify-content-center text-center">
+				<div class="row propery-info">
+					{% for item in d1items %}
+						{% include "@atoms/divc/divc.twig" with {
+              datadiv: item.propertiescardd1,
+              modifier_class: item.propertiescarddstyle
+            } %}
+					{% endfor %}
+				</div>
+				<div class="row">
+					{% for item in d2items %}
+						{% include "@atoms/divc/divc.twig" with {
+              datadiv: item.propertiescardd2,
+              modifier_class: item.propertiescarddstyle
+            } %}
+					{% endfor %}
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

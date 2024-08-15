@@ -1,0 +1,11 @@
+<li class="list {{modifier_class}}">
+{% if li_biclass %}
+    <i class="{{ li_biclass }}"></i>
+  {% endif %}
+  {% if list_content %}
+    <span class="list_span">{{ list_content }}</span>
+  {% endif %}
+  {% if li_content %}
+    {{ li_content }}
+  {% endif %}
+</li>

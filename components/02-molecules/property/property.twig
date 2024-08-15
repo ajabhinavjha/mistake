@@ -1,0 +1,7 @@
+<div class="gallery">
+{% for item in propertyitems %}
+    {% include "@atoms/image/image.twig" with {
+        image_src: item.img,
+    } %}
+{% endfor %}
+</div>

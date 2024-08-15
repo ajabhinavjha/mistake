@@ -1,0 +1,32 @@
+<section
+	id="testimonials" class="testimonials section">
+
+	<!-- Section Title -->
+	<div class="container section-title " data-aos="fade-up">
+		{% include "@molecules/section/section.twig" with {
+          sectionheading: testimonialtitle,
+          sectionheadingstyle: testimonialtitlestyle,
+          sectionparagraph: testimonialsubtitle
+        } %}
+	</div>
+	<!-- End Section Title -->
+
+	<div class="container " data-aos="fade-up" data-aos-delay="100">
+		<div class="row gy-4 autoplay">
+			{% for item in testimonialitems %}
+				<div class="col-lg-4 col-md-6 ">
+					{% include "@molecules/testimonialcard/testimonialcard.twig" with {
+          items: item.items,
+          testpara: item.para,
+          testparastyle: item.parastyle,
+          imgtest: item.imgtestimonial,
+          headingtest: item.headingtestimonial,
+          heading4test: item.heading4testimonial,
+          } %}
+
+				</div>
+			{% endfor %}
+
+		</div>
+	</div>
+</section>

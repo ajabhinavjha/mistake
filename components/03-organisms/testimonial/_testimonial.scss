@@ -1,0 +1,34 @@
+.slick-dots {
+    li {
+        margin: 0 5px; /* Adjust spacing between dashes */
+    }
+    
+    li button::before {
+       /* Replace the dot with a dash */
+        font-size: 12px; /* Set the length of the dash */
+        color: gray; /* Default color for inactive dashes */
+        line-height: 1; /* Adjust line-height to control vertical alignment */
+        display: inline-block; /* Ensure it behaves like a block element for height adjustments */
+         /* Scale vertically to increase height (adjust this value as needed) */
+    }
+
+    /* Active state styling */
+    li.slick-active button::before {
+        color: #2ea359; /* Active dash color */
+    }
+}
+// Ensure that this SCSS is being applied specifically to the slick slider elements
+.autoplay .slick-slide {
+    transition: transform 0.3s ease, filter 0.3s ease;
+    filter: blur(1.1px); // Default blur for non-active slides
+    opacity: 0.6; // Lower opacity for non-active slides
+  }
+  
+  // Focus styles for the center (active) slide
+  .autoplay .slick-center {
+    filter: blur(0); // Remove blur for the center slide
+    transform: scale(1.1); // Slight zoom effect for the center slide
+    opacity: 1; // Fully opaque
+  }
+  
+  

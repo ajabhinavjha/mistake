@@ -1,2 +1,9 @@
-<p class=" paragraph {{modifier_class}}">{{para_content}}</p>
+<p class="paragraph {{ modifier_class }}">
+  {% if biclass %}
+    <i class="{{ biclass }} fai"></i>
+  {% endif %}
+  <a href="{{ pa_url }}">{{ pa_content }}</a>
+  {{ para_content }}
+</p>
+
 

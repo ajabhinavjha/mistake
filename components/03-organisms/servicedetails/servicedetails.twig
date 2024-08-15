@@ -1,0 +1,43 @@
+<section id="service-details" class="service-details section">
+
+      <div class="container">
+
+        <div class="row gy-5">
+
+          <div class="col-lg-4 " data-aos="fade-up" data-aos-delay="100">
+
+            <div class="service-box">
+              {% include "@molecules/serviceslist/serviceslist.twig" with {
+                
+                
+              } %}
+            </div><!-- End Services List -->
+
+            <div class="service-box">
+              {% include "@molecules/download/download.twig" with {
+                
+                
+              } %}
+            </div><!-- End Services List -->
+
+            <div class="help-box d-flex flex-column justify-content-center align-items-center">
+              {% include "@molecules/have/have.twig" with {
+                
+                
+              } %}
+            </div>
+
+          </div>
+
+          <div class="col-lg-8 ps-lg-5 " data-aos="fade-up" data-aos-delay="200">
+            {% include "@molecules/services2/services2.twig" with {
+                
+                
+              } %}
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>

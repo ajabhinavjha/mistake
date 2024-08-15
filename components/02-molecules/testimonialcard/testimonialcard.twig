@@ -1,0 +1,26 @@
+<div class="testimonial-item">
+                <div class="stars">
+                {% for item in items %}
+                  {% include "@atoms/booticons/booticons.twig" with {
+                        booticon: item.testclass,
+                        modifier_class: item.testclassstyle
+                  } %}
+                {% endfor %}
+                </div>
+                  {% include "@atoms/paragraph/paragraph.twig" with {
+                        para_content: testpara,
+                        modifier_class: testparastyle,
+                  } %}
+                <div class="profile mt-auto">
+                  {% include "@atoms/image/image.twig" with {
+                        image_src: imgtest,
+                        modifier_class: testimgstyle,
+                  } %}
+                  {% include "@atoms/heading3/heading3.twig" with {
+                        heading3_content: headingtest,
+                  } %}
+                  {% include "@atoms/heading4/heading4.twig" with {
+                        heading4_content: heading4test,
+                  } %}
+                </div>
+</div>

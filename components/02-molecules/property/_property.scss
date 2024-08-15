@@ -1,0 +1,22 @@
+.slick-prev, .slick-next {
+    width: 50px;    /* Increase width */
+    height: 50px;   /* Increase height */
+    z-index: 1000;  /* Ensure arrows are above other elements */
+  }
+  
+  .slick-prev::before, .slick-next::before {
+    font-size: 30px;    /* Increase the size of the arrows */
+    font-weight: 100;   /* Make the arrows lighter */
+  }
+  
+  .slick-prev {
+    left: 15px;    /* Adjust left position */
+  }
+  
+  .slick-next {
+    right: 15px;   /* Adjust right position */
+  }
+  
+.slick-dots{
+  margin: 20px 0px 0px;
+}

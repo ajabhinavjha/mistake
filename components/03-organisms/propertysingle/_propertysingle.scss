@@ -1,0 +1,111 @@
+.real-estate-2 .portfolio-details-slider img {
+    width: 100%;
+  }
+  
+  .real-estate-2 .portfolio-info h3 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    position: relative;
+  }
+  
+  .real-estate-2 .portfolio-info h3:after {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 50px;
+    height: 3px;
+    background: #2eca6a;
+    left: 0;
+    bottom: 0;
+  }
+  
+  .real-estate-2 .portfolio-info ul {
+    list-style: none;
+    padding: 0;
+    font-size: 15px;
+    color: #444444;
+  }
+  
+  .real-estate-2 .portfolio-info ul li {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 15px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  }
+  
+  .real-estate-2 .portfolio-info ul strong {
+    text-transform: uppercase;
+    font-weight: 400;
+    color: color-mix(in srgb, #444444, transparent 50%);
+    font-size: 14px;
+  }
+  
+  .real-estate-2 .portfolio-info .btn-visit {
+    padding: 8px 40px;
+    background: #2eca6a;
+    color: #ffffff;
+    border-radius: 50px;
+    transition: 0.3s;
+  }
+  
+  .real-estate-2 .portfolio-info .btn-visit:hover {
+    background: color-mix(in srgb, #2eca6a, transparent 20%);
+  }
+  
+  .real-estate-2 .portfolio-description h2 {
+    font-size: 26px;
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
+  
+  .real-estate-2 .portfolio-description p {
+    padding: 0;
+  }
+  
+ 
+  .real-estate-2 .nav-pills {
+    border-bottom: 1px solid color-mix(in srgb, #444444, transparent 85%);
+  }
+  
+  .real-estate-2 .nav-pills li+li {
+    margin-left: 40px;
+  }
+  
+  .real-estate-2 .nav-link {
+    background: none;
+    font-size: 18px;
+    font-weight: 400;
+    color: #444444;
+    padding: 12px 0;
+    margin-bottom: -2px;
+    border-radius: 0;
+  }
+  
+  .real-estate-2 .nav-link.active {
+    color: #2eca6a;
+    background: none;
+    border-bottom: 3px solid #2eca6a;
+  }
+  
+  @media (max-width: 575px) {
+    .real-estate-2 .nav-link {
+      font-size: 16px;
+    }
+  }
+  
+  .real-estate-2 .tab-content h4 {
+    font-size: 18px;
+    margin: 0;
+    font-weight: 700;
+    color: #444444;
+  }
+  
+  .real-estate-2 .tab-content i {
+    font-size: 22px;
+    line-height: 0;
+    margin-right: 8px;
+    color: #444444;
+  }
+  

@@ -1,0 +1,32 @@
+<section id="real-estate-2" class="real-estate-2 section">
+
+	<div class="container " data-aos="fade-up">
+
+		{% include "@molecules/property/property.twig" with {
+            propertyitems: propertysingleitems,
+        } %}
+
+		<div class="row justify-content-between gy-4 mt-4">
+
+			{% include "@molecules/propertydetails/propertydetails.twig" with {
+            propertydetailsh2: propertysingleh2,
+            propertydetailsitems: propertysingle2items,
+            propertydetailsspan: propertysinglespan,
+            propertydetailsimg: propertysingleimg,
+            propertydetailsh3: propertysingleh3,
+            propertydetailsh4: propertysingleh4,
+            propertydetailstabimg: propertysingletabimg,
+            propertydetails_Video: propertysingle_video,
+            propertydetails_FloorPlans: propertysingle_floorplans,
+            propertydetails_Location: propertysingle_location,
+        } %}
+
+			{% include "@molecules/propertysummry/propertysummry.twig" with {
+            propertysummryh3: propertysingleh31,
+            propertysummryitems: propertysingle3items,
+        } %}
+		</div>
+
+	</div>
+
+</section>

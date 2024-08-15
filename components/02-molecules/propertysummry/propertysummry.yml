@@ -1,0 +1,9 @@
+propertysummryh3: 'Quick Summary'
+propertysummryitems:
+ - list: '<strong>Property ID:</strong> 1134n'
+ - list: '<strong>Location:</strong> Chicago, IL 606543'
+ - list: '<strong>Property Type:</strong> House'
+ - list: '<strong>Status:</strong> Sale'
+ - list: '<strong>Area:</strong> <span class="propertysummryspan">340m <sup>2</sup></span>'
+ - list: '<strong>Beds:</strong> 4'
+ - list: '<strong>Baths:</strong> 1'

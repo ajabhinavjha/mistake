@@ -1,0 +1,18 @@
+<div class="testimoniaitem">
+	{% include "@atoms/paragraph/paragraph.twig" with {
+            para_content: propertydetailsdivspan,
+            modifier_class: "text-start"
+        } %}
+	<div class="text-start">
+		{% include "@atoms/image/image.twig" with {
+            image_src: propertydetailsdivimg,
+        } %}
+		{% include "@atoms/heading3/heading3.twig" with {
+            heading3_content: propertydetailsdivh3,
+        } %}
+		{% include "@atoms/heading4/heading4.twig" with {
+            heading4_content: propertydetailsdivh4,
+        } %}
+		
+	</div>
+</div>

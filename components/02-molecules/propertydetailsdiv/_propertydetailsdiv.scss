@@ -1,0 +1,55 @@
+.testimoniaitem {
+    padding: 30px 30px 0 30px;
+    position: relative;
+    background: color-mix(in srgb, #444444, transparent 97%);
+    margin-bottom: 50px;
+  }
+  
+  .testimoniaitem img {
+    width: 90px;
+    border-radius: 50px;
+    border: 6px solid #ffffff;
+    float: left;
+    margin: 0 10px 0 0;
+  }
+  
+  .testimoniaitem h3 {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 15px 0 5px 0;
+    padding-top: 20px;
+  }
+  
+  .testimoniaitem h4 {
+    font-size: 14px;
+    color: #6c757d;
+    margin: 0;
+  }
+  
+ .testimoniaitem .quote-icon-left,
+ .testimoniaitem .quote-icon-right {
+    color: color-mix(in srgb, #2eca6a, transparent 50%);
+    font-size: 26px;
+    line-height: 0;
+  }
+  
+ .testimoniaitem .quote-icon-left {
+    display: inline-block;
+    left: -5px;
+    position: relative;
+  }
+  
+  .testimoniaitem .quote-icon-right {
+    display: inline-block;
+    right: -5px;
+    position: relative;
+    top: 10px;
+    transform: scale(-1, -1);
+  }
+  
+   .testimoniaitem p {
+    font-style: italic;
+    margin: 0 0 15px 0 0 0;
+    padding: 0;
+  }
+  

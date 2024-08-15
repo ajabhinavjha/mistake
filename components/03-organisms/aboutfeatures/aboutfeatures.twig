@@ -1,0 +1,42 @@
+<section id="features" class="features section">
+
+	<div class="container">
+
+		<div class="row justify-content-around gy-4">
+			<div class="features-image col-lg-6 aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
+				{% include "@atoms/image/image.twig" with {
+    image_src: aboutfeaturesimg,
+} %}
+			</div>
+
+			<div class="col-lg-5 d-flex flex-column justify-content-center aos-init aos-animate" data-aos="fade-up" data-aos-delay="200">
+				{% include "@atoms/heading3/heading3.twig" with {
+    heading3_content: aboutfeaturesheading,
+} %}
+				{% include "@atoms/paragraph/paragraph.twig" with {
+    para_content: aboutfeaturespara,
+} %}
+
+				{% for item in aboutfeaturesitems %}
+
+					<div class="icon-box d-flex position-relative " data-aos="fade-up" data-aos-delay="300">
+						{% include "@atoms/booticons/booticons.twig" with {
+    booticon: item.aboutfeaturesicon,
+} %}
+						<div>
+							{% include "@atoms/heading4/heading4.twig" with {
+    h4_url: item.aboutfeaturesurl,
+    h4_acontent: item.aboutfeaturesa,
+} %}
+							{% include "@atoms/paragraph/paragraph.twig" with {
+    para_content: item.aboutfeaturespara1,
+} %}
+						</div>
+					</div>
+				{% endfor %}
+				<!-- End Icon Box -->
+
+			</div>
+		</div>
+
+	</section>

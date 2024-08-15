@@ -1,0 +1,7 @@
+haveicon: 'bi bi-headset help-icon'
+haveheading: 'Have a Question?'
+havebiclass0: 'bi bi-telephone me-2'
+havepara: '<span>+1 5589 55488 55</span>'
+havebiclass: 'bi bi-envelope me-2'
+havepa_url: 'mailto:contact@example.com'
+havepa_content: 'contact@example.com'

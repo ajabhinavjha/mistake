@@ -1,0 +1,12 @@
+<div class="download-catalog">
+{% include "@atoms/heading4/heading4.twig" with {
+    heading4_content: download,
+} %}
+{% for item in downloaditems %}
+    {% include "@atoms/icons/icons.twig" with {
+        btn_url: item.downloadurl,
+        faicon: item.downloadicon,
+        btn_content: item.downloadbtn,
+    } %}
+{% endfor %}
+</div>

@@ -1,0 +1,23 @@
+{% include "@atoms/image/image.twig" with {
+    image_src: services2img,
+} %}
+{% include "@atoms/heading3/heading3.twig" with {
+    heading3_content: services2heading,
+} %}
+{% include "@atoms/paragraph/paragraph.twig" with {
+    para_content: services2para,
+} %}
+<ul>
+{% for item in items %}
+{% include "@atoms/list/list.twig" with {
+    li_biclass: item.services2bi,
+    list_content: item.services2list,
+} %}
+{% endfor %}
+</ul>
+{% include "@atoms/paragraph/paragraph.twig" with {
+    para_content: services2para1,
+} %}
+{% include "@atoms/paragraph/paragraph.twig" with {
+    para_content: services2para2,
+} %}

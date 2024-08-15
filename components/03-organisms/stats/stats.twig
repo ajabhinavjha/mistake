@@ -1,0 +1,21 @@
+<section id="stats" class="stats section">
+
+	<div class="container aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
+
+		<div class="row gy-4">
+		{% for item in statsitems %}
+			
+			{% include "@molecules/statscard/statscard.twig" with {
+				statsicon: item.icon,
+				statstarget: item.target,
+				statspara: item.para,
+			} %}
+
+			
+		{% endfor %}
+		</div>
+
+
+	</div>
+
+</div></section>

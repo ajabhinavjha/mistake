@@ -1,0 +1,22 @@
+{% include "@atoms/heading4/heading4.twig" with {
+    heading4_content: serviceslistheading,
+} %}
+<div class="services-list">
+{% for item in serviceslistitems %}
+  {% if loop.first %}
+    {% include "@atoms/icons/icons.twig" with {
+        btn_url: item.serviceslisturl,
+        faicon: item.serviceslisticon,
+        btn_content: item.serviceslistbtn,
+        extra_classes: "first-item-active"
+    } %}
+  {% else %}
+    {% include "@atoms/icons/icons.twig" with {
+        btn_url: item.serviceslisturl,
+        faicon: item.serviceslisticon,
+        btn_content: item.serviceslistbtn,
+    } %}
+  {% endif %}
+{% endfor %}
+</div>
+
