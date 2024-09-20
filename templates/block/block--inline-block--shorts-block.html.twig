@@ -1,0 +1,13 @@
+{% set shorts_id_array = [] %}
+{% for item in content.field_shorts_id['#items'] %}
+    {% set shortsid = item.entity.field_shorts_paragraph_text.value %}
+    
+    
+    {% set shorts_id_array = shorts_id_array|merge([{
+        'shortsid': shortsid,
+    }]) %}
+{% endfor %}
+
+{% include "@molecules/shortsvideo/shortsvideo.twig" with {
+        items : shorts_id_array
+    } %}

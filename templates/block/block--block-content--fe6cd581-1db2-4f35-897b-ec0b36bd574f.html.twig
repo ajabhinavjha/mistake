@@ -1,0 +1,48 @@
+
+{% set propertiesitems_array = [] %}
+{% for item in content["field_propertiesitems"]["#items"] %}
+    {% set image = item.entity.field_propertiesimg.entity.uri.value %}
+    {% set imags = file_url(image) %}
+    {% set title = item.entity.field_propertiesspan.value %}
+    {% set buttonurl = item.entity.field_propertiesh3.value[0].uri %}
+    {% set buttontxt = item.entity.field_propertiesh3.value[0].title %}
+    
+    {% set d11items = [] %}
+    {% for item in item.entity.field_d11items %}
+        {% set d11items = d11items|merge([
+            {
+                'propertiescardd1': item.entity.field_propertiescardd1.value,
+                'propertiescarddstyle': 'col'
+            }
+        ]) %}
+    {% endfor %}
+    {% set d21items = [] %}
+    {% for item in item.entity.field_d21items %}
+        {% set d21items = d21items|merge([
+            {
+                'propertiescardd2': item.entity.field_propertiescardd2.value,
+                'propertiescarddstyle': 'col'
+            }
+        ]) %}
+    {% endfor %}
+    
+    {% set propertiesitems_array = propertiesitems_array|merge([
+        {
+            propertiesimg:  imags,
+            propertiesspan:  title,
+            'propertiesspan_style': 'sale-rent',
+            propertiesh3url:  buttonurl,
+            propertiesh3:  buttontxt,
+            d11items:  d11items,
+            d21items:  d21items,
+        }
+    ]) %}
+{% endfor %} 
+
+
+<div>
+	{% include "@organisms/properties/properties.twig" with {
+                       propertiesitems: propertiesitems_array
+                       
+                    } %}
+</div>

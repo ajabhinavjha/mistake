@@ -12,5 +12,5 @@ whowebiitems:
 '
 whoweimg: 'https://bootstrapmade.com/demo/templates/EstateAgency/assets/img/about-company-1.jpg'
 whoweitems:
- - whoweimg: 'https://bootstrapmade.com/demo/templates/EstateAgency/assets/img/about-company-2.jpg'
- - whoweimg: 'https://bootstrapmade.com/demo/templates/EstateAgency/assets/img/about-company-3.jpg'
+ - whoweimg1: 'https://bootstrapmade.com/demo/templates/EstateAgency/assets/img/about-company-2.jpg'
+ - whoweimg1: 'https://bootstrapmade.com/demo/templates/EstateAgency/assets/img/about-company-3.jpg'

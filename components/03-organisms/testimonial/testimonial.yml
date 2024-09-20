@@ -18,7 +18,7 @@ testimonialitems:
    imgtestimonial: 'https://bootstrapmade.com/demo/templates/EstateAgency/assets/img/testimonials/testimonials-1.jpg'
    imgstyle: 'image--3'
    headingtestimonial: 'Saul Goodman'
-   heading4testimonial: 'Ceo &amp; Founder'
+   heading4testimonial: 'Ceo & Founder'
  - items: 
     - testclass: 'bi bi-star-fill'
       testclassstyle: 'booticons--1'

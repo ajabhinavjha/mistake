@@ -1,0 +1,26 @@
+
+
+{% set statsitems_array = [] %}
+{% for item in content["field_statsitems"]["#items"] %}
+	{% set icons = item.entity.field_statsitems_bi.value|striptags %}
+
+	{% set target = item.entity.field_statsitems_target.value %}
+	{% set para = item.entity.field_statsitems_para.value %}
+	
+	{% set statsitems_array = statsitems_array|merge([
+        {
+                        'icon': icons,
+                        'target': target,
+                        'para': para,
+        }
+    ]) %}
+{% endfor %}
+
+
+<div class="mt-5">
+	{% include "@organisms/stats/stats.twig" with {
+                       
+                       statsitems: statsitems_array
+                       
+                    } %}
+</div>

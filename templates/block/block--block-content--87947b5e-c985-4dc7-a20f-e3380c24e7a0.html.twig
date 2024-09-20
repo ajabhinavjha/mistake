@@ -1,0 +1,36 @@
+{% set sectiontitle = content.field_service_title  %}
+{% set sectionsubtitle = content.field_service_subheading[0]["#context"].value %}
+{# <pre>
+    {{ dump(content.field_service_subheading) }}
+</pre> #}
+
+{% set service_card_content_array = [] %}
+{% for item in content["field_service_card"]["#items"] %}
+	{% set icons = item.entity.field_service_card_img.value|striptags %}
+
+	{% set content = item.entity.field_service_card_content.value %}
+	{% set titleurl = item.entity.field_service_card_title.value[0].uri %}
+	{% set title = item.entity.field_service_card_title.value[0].title %}
+
+	{% set service_card_content_array = service_card_content_array|merge([
+        {
+                        'icon': icons,
+                        'heading': title,
+                        'headingstyle': 'heading3--card',
+                        'url': titleurl,
+                        'paragraph': content,
+                        'paragraphstyle': 'paragraph--card',
+        }
+    ]) %}
+{% endfor %}
+
+
+<div>
+	{% include "@organisms/service/service.twig" with {
+                       'servicetitle': sectiontitle,
+                       'servicesubtitle': sectionsubtitle,
+                       'servicetitlestyle': 'heading2--section',
+                       serviceitems: service_card_content_array
+                       
+                    } %}
+</div>

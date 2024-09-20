@@ -1,0 +1,29 @@
+{% set condition_para_array = [] %}
+{% for item in content.field_condition_para['#items'] %}
+{% set media_entity = item.entity.field_condition_para_media.0.entity %}
+    {% set img = media_entity.field_media_image.0.entity.uri.value %}
+    {% set conditionimg = file_url(img) %}
+
+    {% set video = media_entity.field_media_video_file.0.entity.uri.value %} 
+    {% set conditionvideo = file_url(video) %}
+
+    {% set iframe = media_entity.field_media_oembed_video.entity.field_media_oembed_video.0.value %}
+
+
+    {% set url = iframe|split('/') %}
+   
+    {% set iframeurl = url[3] %}
+
+    {% set conditioniframe = iframeurl%} 
+    
+    
+    {% set condition_para_array = condition_para_array|merge([{
+        'conditionimg': conditionimg,
+        'conditionvideo': conditionvideo,
+        'conditioniframe': conditioniframe,
+    }]) %}
+{% endfor %}
+
+{% include "@molecules/conditionfirst/conditionfirst.twig" with {
+        items : condition_para_array
+    } %}

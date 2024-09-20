@@ -13,6 +13,8 @@ libraries:
   - 'emulsify/global'
   - 'emulsify/bootstrap'
   - 'emulsify/bootstrap_icons'
+  - 'emulsify/aos'
+  # - 'emulsify/slick_carousel'
   # - 'emulsify/typekit'
 
 # Libraries override allows you to remove libraries added by other projects.

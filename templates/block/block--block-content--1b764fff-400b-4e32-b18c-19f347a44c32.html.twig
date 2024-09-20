@@ -1,0 +1,79 @@
+{% set serviceslistheading = content.field_serviceslistheading.0['#context'].value %}
+{% set download = content.field_download %}
+{% set haveicon = content.field_haveicon.0["#text"] %}
+{% set haveheading = content.field_haveheading.0['#context'].value %}
+{% set havebiclass0 = content.field_havebiclass0.0["#text"]	
+ %}
+{% set havepara = content.field_havepara.0['#context'].value %}
+{% set havebiclass = content.field_havebiclass.0["#text"] %}
+
+{% set havepa_url = content.field_havepa_content.0["#url"].uri %}
+{% set havepa_content = content.field_havepa_content.0["#title"] %}
+
+{# {% set services2img = content.field_services2img.0["#markup"] %} #}
+{% set imgg = content.field_services2img.0['#item'].entity.uri.value %}
+{% set services2img = file_url(imgg | image_style('medium')) %}
+
+{% set services2para = content.field_services2para.0['#context'].value %}
+{% set services2para1 = content.field_services2para1.0['#context'].value %}
+{% set services2para2 = content.field_services2para2.0['#context'].value %}
+
+
+{% set serviceslistitems_array = [] %}
+{% for item in content.field_serviceslistitems['#items'] %}
+    {% set serviceslisticon = item.entity.field_serviceslisticon.value|striptags %}
+    {% set serviceslisturl = item.entity.field_serviceslistbtn.value[0].uri %}
+	{% set serviceslistbtn = item.entity.field_serviceslistbtn.value[0].title %}
+    
+    {% set serviceslistitems_array = serviceslistitems_array|merge([{
+        'serviceslisturl': serviceslisturl,
+        'serviceslisticon': serviceslisticon,
+        'serviceslistbtn': serviceslistbtn,
+    }]) %}
+{% endfor %}
+
+{% set downloaditems_array = [] %}
+{% for item in content.field_downloaditems['#items'] %}
+    {% set downloadicon = item.entity.field_downloadicon.value|striptags %}
+    {% set downloadurl = item.entity.field_downloadbtn.value[0].uri %}
+	{% set downloadbtn = item.entity.field_downloadbtn.value[0].title %}
+    
+    {% set downloaditems_array = downloaditems_array|merge([{
+        'downloadurl': downloadurl,
+        'downloadicon': downloadicon,
+        'downloadbtn': downloadbtn,
+    }]) %}
+{% endfor %}
+
+{% set items_array = [] %}
+{% for item in content.field_items['#items'] %}
+     {% set services2bi = item.entity.field_services2bi.value|striptags %}
+    {% set services2list = item.entity.field_services2list.value %}
+
+    {% set items_array = items_array|merge([{
+        'services2bi': services2bi,
+        'services2list': services2list,
+    }]) %}
+{% endfor %}
+
+<div>
+    {% include "@organisms/servicedetails/servicedetails.twig" with {
+        'serviceslistheading': serviceslistheading,
+        'download': download,
+        'haveicon':  haveicon,
+        'haveheading':   haveheading,
+        'havebiclass0':   havebiclass0,
+        'havepara':   havepara,
+        'havebiclass':   havebiclass,
+        'havepa_url':   havepa_url,
+        'havepa_content':   havepa_content,
+        'services2img':   services2img,
+        'services2heading':   services2heading,
+        'services2para':   services2para,
+        'services2para1':   services2para1,
+        'services2para2':   services2para2,
+        serviceslistitems:  serviceslistitems_array,
+        downloaditems:  downloaditems_array,
+        items:  items_array,
+    } %}
+</div>

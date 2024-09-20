@@ -1,0 +1,47 @@
+{% set sectiontitle = content.field_testimonial_title  %}
+{% set sectionsubtitle = content.field_testimonial_subtitle[0]["#context"].value %}
+
+
+{% set testimonial_card_array = [] %}
+{% for item in content["field_testimonial_card"]["#items"] %}
+    {% set image = item.entity.field_testimonial_card_image.entity.uri.value %}
+    {% set imags = file_url(image) %}
+    {% set title = item.entity.field_testimonial_card_title.value %}
+    {% set subtitle = item.entity.field_testimonial_card_subtitle.value %}
+    {% set content = item.entity.field_testimonial_card_content.value %}
+    
+    {% set testimonial_star = [] %}
+    {% for testimonial in item.entity.field_testimonial_card_star %}
+        {% set testimonial_star = testimonial_star|merge([
+            {
+                'testclass': testimonial.entity.field_testimonial_star.value|striptags ,
+                'testclassstyle': 'booticons--1'
+            }
+        ]) %}
+    {% endfor %}
+    
+    {% set testimonial_card_array = testimonial_card_array|merge([
+        {
+            'para': content,
+            'parastyle': 'paragraph--test',
+            'imgtestimonial':  imags,
+            'imgstyle': 'image--3',
+            'headingtestimonial': title,
+            'headingstyle': 'heading4--1',
+            'heading4testimonial': subtitle,
+            'items': testimonial_star
+            
+        }
+    ]) %}
+{% endfor %} 
+
+
+<div class="mt-5">
+	{% include "@organisms/testimonial/testimonial.twig" with {
+                       'testimonialtitle': sectiontitle,
+                       'testimonialsubtitle': sectionsubtitle,
+                       'testimonialtitlestyle': 'heading2--section',
+                       testimonialitems: testimonial_card_array
+                       
+                    } %}
+</div>

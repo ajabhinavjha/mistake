@@ -1,0 +1,42 @@
+{% set contactinputtype3 = content.field_contactinputtype3.0['#context'].value %}
+{% set contactinputplace3 = content.field_contactinputplace3.0['#context'].value %}
+
+{% set contactsubmittype = content.field_contactsubmittype.0['#context'].value %}
+{% set contactsubmittypecontent = content.field_contactsubmittypecontent.0["#title"] %}
+
+
+{% set contactsocial_array = [] %}
+{% for item in content.field_contactsocial['#items'] %}
+    {% set contactsocialicon = item.entity.field_contactsocialicon.value|striptags %}
+    {% set contactsocialh3 = item.entity.field_who_we_field_contactsocialh3bi_item_list.value %}
+    {% set contactsocialpara = item.entity.field_contactsocialpara.value %}
+    
+    {% set contactsocial_array = contactsocial_array|merge([{
+        'contactsocialicon': contactsocialicon,
+        'contactsocialh3': contactsocialh3,
+        'contactsocialpara': contactsocialpara
+    }]) %}
+{% endfor %}
+
+{% set contactform_array = [] %}
+{% for item in content.field_contactform['#items'] %}
+        {% set contactinputtype = item.entity.field_contactinputtype.value %}
+        {% set contactinputplace = item.entity.field_contactinputplace.value %}
+
+    
+    {% set contactform_array = contactform_array|merge([{
+        'contactinputtype': contactinputtype,
+        'contactinputplace': contactinputplace
+    }]) %}
+{% endfor %}
+
+<div>
+    {% include "@organisms/contact/contact.twig" with {
+        'contactinputtype3': contactinputtype3,
+        'contactinputplace3': contactinputplace3,
+        'contactsubmittype': contactsubmittype,
+        'contactsubmittypecontent': contactsubmittypecontent,
+        'contactsocial': contactsocial_array,
+        'contactform': contactform_array,
+    } %}
+</div>

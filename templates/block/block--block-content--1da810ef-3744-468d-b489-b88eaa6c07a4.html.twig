@@ -1,0 +1,71 @@
+{% set propertysingleh2 = content.field_propertysingleh2.0['#context'].value %}
+{% set propertysinglespan = content.field_propertysinglespan.0['#text']|striptags %}
+
+
+{# <pre>
+    {{ dump(content.field_propertysinglespan) }}
+</pre> #}
+{% set propertysingleimg = content.field_propertysingleimg.0['#markup'] %}
+{% set propertysingleh3 = content.field_propertysingleh3.0['#context'].value %}
+{% set propertysingleh4 = content.field_propertysingleh4.0['#context'].value	
+ %}
+{% set propertysingle_video = content.field_propertysingle_video.0['#context'].value %}
+{% set propertysingle_floorplans = content.field_propertysingle_floorplans.0['#context'].value %}
+
+{% set propertysingle_location = content.field_propertysingle_location.0['#context'].value %}
+{% set propertysingletabimg = content.field_propertysingletabimg.0['#markup'] %}
+
+{% set propertysingleh31 = content.field_propertysingleh31.0['#context'].value %}
+
+
+{% set propertysingle2items_array = [] %}
+{% for item in content.field_propertysingle2items['#items'] %}
+    {% set para = item.entity.field_para.value %}
+    
+    
+    {% set propertysingle2items_array = propertysingle2items_array|merge([{
+        'para': para,
+    }]) %}
+{% endfor %}
+
+{% set propertysingle3items_array = [] %}
+{% for item in content.field_propertysingle3items['#items'] %}
+    {% set list = item.entity.field_list.value|striptags %}
+{# <li class="list ">
+    {{ list|raw }}
+</li> #}
+
+    {% set propertysingle3items_array = propertysingle3items_array|merge([{
+        'list': list,
+    }]) %}
+{% endfor %}
+
+{% set propertysingleitems_array = [] %}
+{% for item in content.field_propertysingleitems['#items'] %}
+   
+    {% set image = item.entity.field_img.entity.uri.value %}
+    {% set img = file_url(image) %}
+
+    {% set propertysingleitems_array = propertysingleitems_array|merge([{
+        'img': img,
+    }]) %}
+{% endfor %}
+
+<div>
+    {% include "@organisms/propertysingle/propertysingle.twig" with {
+        'propertysingleh2': propertysingleh2,
+        'propertysinglespan': propertysinglespan,
+        'propertysingleimg':  propertysingleimg,
+        'propertysingleh3':   propertysingleh3,
+        'propertysingleh4':   propertysingleh4,
+        'propertysingle_video':   propertysingle_video,
+        'propertysingle_floorplans':   propertysingle_floorplans,
+        'propertysingle_location':   propertysingle_location,
+        'propertysingletabimg':   propertysingletabimg,
+        'propertysingleh31':   propertysingleh31,
+
+        propertysingleitems:  propertysingleitems_array,
+        propertysingle2items:  propertysingle2items_array,
+        propertysingle3items:  propertysingle3items_array,
+    } %}
+</div>

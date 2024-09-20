@@ -1,0 +1,37 @@
+{% set sectiontitle = content.field_who_we_para.0['#context'].value %}
+{% set sectiontitle2 = content.field_who_we_heading %}
+{% set sectionsubtitle = content.field_who_we_para1.0['#context'].value %}
+{% set img = content.field_who_we_img1.0['#markup'] %}
+
+{% set who_we_bi_items_array = [] %}
+{% for item in content.field_who_we_bi_items['#items'] %}
+    {% set icons = item.entity.field_who_we_bi_item_bi.value|striptags %}
+    {% set content_value = item.entity.field_who_we_bi_item_list.value %}
+    
+    {% set who_we_bi_items_array = who_we_bi_items_array|merge([{
+        'whowebi': icons,
+        'whowelist': content_value,
+    }]) %}
+{% endfor %}
+
+{% set who_we_items_array = [] %}
+{% for item in content.field_who_we_items['#items'] %}
+    {% set image_uri = item.entity.field_who_we_items_image.entity.uri.value %}
+    {% set imags = file_url(image_uri) %}
+    
+    {% set who_we_items_array = who_we_items_array|merge([{
+        'whoweimg1': imags,
+    }]) %}
+{% endfor %}
+
+<div>
+    {% include "@organisms/whowe/whowe.twig" with {
+        'whowepara': sectiontitle,
+        'whoweheading': sectiontitle2,
+        'whowepara1': sectionsubtitle,
+        'whowepara1style': 'fst-italic',
+        'whowebiitems': who_we_bi_items_array,
+        'whoweitems': who_we_items_array,
+        'whoweimg': img,
+    } %}
+</div>

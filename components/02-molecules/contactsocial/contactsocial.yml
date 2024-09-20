@@ -1,1 +1,10 @@
-contactsocialicon: 'bi bi-geo-alt flex-shrink-0'
+contactsocialitems:
+ - contactsocialicon: 'bi bi-geo-alt flex-shrink-0'
+   contactsocialh3: 'Address'
+   contactsocialpara: 'A108 Adam Street, New York, NY 535022'
+ - contactsocialicon: 'bi bi-telephone flex-shrink-0'
+   contactsocialh3: 'Call Us'
+   contactsocialpara: '+1 5589 55488 55'
+ - contactsocialicon: 'bi bi-envelope flex-shrink-0'
+   contactsocialh3: 'Email Us'
+   contactsocialpara: 'info@example.com'

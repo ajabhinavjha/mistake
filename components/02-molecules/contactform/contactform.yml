@@ -1,0 +1,9 @@
+contactformitems:
+ - contactinputtype: 'text'
+   contactinputplace: 'Your Name'
+ - contactinputtype: 'email'
+   contactinputplace: 'Your Email'
+contactinputtype1: 'text'
+contactinputplace1: 'Subject'
+contactformsubmittype: 'submit'
+contactformsubmittypecontent: 'Send Message'

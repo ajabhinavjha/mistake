@@ -1,0 +1,44 @@
+{% set sectiontitle = content.field_our_agent_title  %}
+{% set sectionsubtitle = content.field_our_agent_subtitle[0]["#context"].value %}
+
+
+{% set our_agent_card_array = [] %}
+{% for item in content["field_our_agent_card"]["#items"] %}
+    {% set image = item.entity.field_our_agent_card_image.entity.uri.value %}
+    {% set imags = file_url(image) %}
+    {% set title = item.entity.field_our_agent_card_heading.value %}
+    {% set content = item.entity.field_our_agent_card_span.value %}
+    
+    {% set social_items = [] %}
+    {% for social in item.entity.field_our_agent_card_social_item %}
+        {% set social_items = social_items|merge([
+            {
+                'biclass': social.entity.field_social_item_icon.value[0].title,
+                'url': social.entity.field_social_item_icon.value[0].uri,
+                'biclassstyle': 'buttn--2'
+            }
+        ]) %}
+    {% endfor %}
+    
+    {% set our_agent_card_array = our_agent_card_array|merge([
+        {
+            'img': imags,
+            'imgstyle': 'image--2',
+            'heading': title,
+            'headingstyle': 'heading4--1',
+            'span': content,
+            'socialitems': social_items
+        }
+    ]) %}
+{% endfor %}
+
+
+<div>
+	{% include "@organisms/ouragentcomp/ouragentcomp.twig" with {
+                       'ouragentcomptitle': sectiontitle,
+                       'ouragentcompsubtitle': sectionsubtitle,
+                       'ouragentcomptitlestyle': 'heading2--section',
+                       ouragentitems: our_agent_card_array
+                       
+                    } %}
+</div>

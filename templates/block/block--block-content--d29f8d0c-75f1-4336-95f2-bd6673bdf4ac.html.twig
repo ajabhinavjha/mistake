@@ -1,0 +1,33 @@
+{% set sectiontitle = content.field_aboutfeaturesheading  %}
+{% set sectionsubtitle = content.field_aboutfeaturespara[0]["#context"].value %}
+{% set sectionimg = content.field_aboutfeaturesimg.0['#markup'] %}
+
+
+{% set aboutfeaturesitems_array = [] %}
+{% for item in content["field_aboutfeaturesitems"]["#items"] %}
+	{% set icons = item.entity.field_aboutfeaturesicon.value|striptags %}
+
+	{% set content = item.entity.field_aboutfeaturespara1.value %}
+	{% set titleurl = item.entity.field_aboutfeaturesa.value[0].uri %}
+	{% set title = item.entity.field_aboutfeaturesa.value[0].title %}
+
+	{% set aboutfeaturesitems_array = aboutfeaturesitems_array|merge([
+        {
+                        'aboutfeaturesicon': icons,
+                        'aboutfeaturesa': title,
+                        'aboutfeaturesurl': titleurl,
+                        'aboutfeaturespara1': content,
+        }
+    ]) %}
+{% endfor %}
+
+
+<div class="mt-5">
+	{% include "@organisms/aboutfeatures/aboutfeatures.twig" with {
+                       'aboutfeaturesimg': sectionimg,
+                       'aboutfeaturesheading': sectiontitle,
+                       'aboutfeaturespara': sectionsubtitle,
+                       aboutfeaturesitems: aboutfeaturesitems_array
+                       
+                    } %}
+</div>

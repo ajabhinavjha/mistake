@@ -1,0 +1,7 @@
+<div class="shortsvideo">
+{% for item in items %}
+	{% include "@atoms/shorts/shorts.twig" with {
+            id: item.shortsid,
+} %}
+{% endfor %}
+</div>

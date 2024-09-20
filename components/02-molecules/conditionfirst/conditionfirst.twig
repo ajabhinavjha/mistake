@@ -1,0 +1,9 @@
+<div class="condition">
+{% for item in items %}
+	{% include "@atoms/condition/condition.twig" with {
+           img: item.conditionimg,
+           video: item.conditionvideo,
+           iframe: item.conditioniframe,
+} %}
+{% endfor %}
+</div>

@@ -1,6 +1,21 @@
 <?php
-
 /**
- * @file
- * Functions to support theming.
+ * Implements hook_preprocess_user().
  */
+function stable9_preprocess_user(&$variables) {
+  $user = $variables['user'];
+  $roles = $user->getRoles();
+  
+  if (in_array('content_editor', $roles)) {
+    $variables['attributes']['class'] = 'content-editor';
+  }
+  elseif (in_array('administrator', $roles)) {
+    $variables['attributes']['class'] = 'administrator';
+  }
+  elseif (in_array('authenticated_user', $roles)) {
+    $variables['attributes']['class'] = 'authenticated_user';
+  }
+  if($variables['logged_in'] == false){
+    $variables['attributes']['class'] = 'anonymous_user';
+  }
+}

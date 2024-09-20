@@ -1,0 +1,36 @@
+<div class="col-lg-8">
+            <form action="forms/contact.php" method="post" class="php-email-form aos-init aos-animate" data-aos="fade-up" data-aos-delay="200">
+              <div class="row gy-4">
+                {% for item in contactformitems %}
+                    
+                <div class="col-md-6">
+                  {% include "@atoms/input/input.twig" with {
+                    type: item.contactinputtype,
+                    placeholder: item.contactinputplace,
+                  } %}
+                </div>
+
+                {% endfor %}
+
+                <div class="col-md-12">
+                  {% include "@atoms/input/input.twig" with {
+                    type: contactinputtype1,
+                    placeholder: contactinputplace1,
+                  } %}
+                </div>
+
+                <div class="col-md-12">
+                  <textarea class="form-control" name="message" rows="6" placeholder="Message" required=""></textarea>
+                </div>
+
+                <div class="col-md-12 text-center">
+
+                  {% include "@atoms/button/button.twig" with {
+                    btn_type: contactformsubmittype,
+                    btn_content: contactformsubmittypecontent
+                  } %}
+                </div>
+
+              </div>
+            </form>
+          </div>
