@@ -19,3 +19,19 @@ function stable9_preprocess_user(&$variables) {
     $variables['attributes']['class'] = 'anonymous_user';
   }
 }
+
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter() for blocks.
+ */
+function emulsify_theme_suggestions_block_alter(array &$suggestions, array $variables) {
+  // Check if the block has content and is a block content entity.
+  if (isset($variables['elements']['content']['#block_content'])) {
+    // Get the block bundle (machine name).
+    $bundle = $variables['elements']['content']['#block_content']->bundle();
+
+    // Add the template suggestion based on the block bundle.
+    array_splice($suggestions, 1, 0, 'block__' . $bundle);
+  }
+}
+
